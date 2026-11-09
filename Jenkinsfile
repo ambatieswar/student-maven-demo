@@ -6,7 +6,7 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/YOUR_USERNAME/student-maven-demo.git'
+                git 'https://github.com/ambatieswar/student-maven-demo.git'
             }
         }
 
