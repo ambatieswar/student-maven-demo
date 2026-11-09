@@ -1,12 +1,13 @@
-pipeline {
 
+pipeline {
     agent any
 
     stages {
 
         stage('Checkout') {
             steps {
-                git 'https://github.com/ambatieswar/student-maven-demo.git'
+                git branch: 'main',
+                    url: 'https://github.com/ambatieswar/student-maven-demo.git'
             }
         }
 
@@ -21,11 +22,9 @@ pipeline {
                 bat 'mvn test'
             }
         }
-
     }
 
     post {
-
         success {
             echo 'BUILD SUCCESSFUL!'
         }
@@ -33,6 +32,5 @@ pipeline {
         failure {
             echo 'BUILD FAILED!'
         }
-
     }
 }
